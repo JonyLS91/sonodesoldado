@@ -11,21 +11,48 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=7">
+    <style>
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 0.7rem !important;
+                white-space: nowrap !important;
+            }
+
+            .btn-sm {
+                font-size: 0.65rem !important;
+                padding: 6px 10px !important;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 0.65rem !important;
+            }
+
+            .btn-sm {
+                font-size: 0.6rem !important;
+                padding: 5px 8px !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">SONO DE <span class="highlight">SOLDADO</span></div>
+            <div class="logo" style="font-size: 0.7rem; white-space: nowrap;">SONO DE <span
+                    class="highlight">SOLDADO</span></div>
             <ul class="nav-links">
                 <li><a href="#beneficios">Benefícios</a></li>
                 <li><a href="#oferta">Oferta</a></li>
                 <li><a href="#depoimentos">Depoimentos</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="#oferta" class="btn btn-sm">Quero Dormir Melhor</a>
+            <a href="#oferta" class="btn btn-sm"
+                style="display: none !important; visibility: hidden !important; opacity: 0 !important; width: 0 !important; height: 0 !important; overflow: hidden !important;">Quero
+                Dormir Melhor</a>
             <div class="mobile-menu-btn">
                 <div class="bar"></div>
                 <div class="bar"></div>
