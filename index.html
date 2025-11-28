@@ -4,35 +4,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Sono de Soldado | Durma em 7 Dias</title>
-    <meta name="description" content="Método validado por militares para transformar seu sono em 7 dias.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap"
+    <title>Método Sono de Soldado - Durma em 2 Minutos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=7">
     <style>
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 1.5rem !important;
-                white-space: nowrap !important;
+        /* Urgency Banner Styles */
+        .urgency-banner {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+            z-index: 999;
+            padding: 12px 0;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            animation: urgencyPulse 2s ease-in-out infinite;
+        }
+
+        .urgency-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .urgency-icon {
+            font-size: 1.3rem;
+            animation: fireFlicker 1.5s ease-in-out infinite;
+        }
+
+        .urgency-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .urgency-text strong {
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .urgency-badge {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: #fff;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 15px 0;
+            display: inline-block;
+            text-transform: uppercase;
+            border-radius: 8px;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1.5px;
+            box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+            animation: urgencyShake 3s ease-in-out infinite;
+        }
+
+        @keyframes urgencyPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
             }
 
-            .btn-sm {
-                font-size: 0.65rem !important;
-                padding: 6px 10px !important;
+            50% {
+                box-shadow: 0 4px 25px rgba(231, 76, 60, 0.7);
             }
         }
 
-        @media (max-width: 400px) {
-            .logo {
-                font-size: 0.65rem !important;
+        @keyframes fireFlicker {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
             }
 
-            .btn-sm {
-                font-size: 0.6rem !important;
-                padding: 5px 8px !important;
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes urgencyShake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-2px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(2px);
+            }
+        }
+
+        .hero {
+            padding-top: 190px !important;
+        }
+
+        /* Mobile Responsive - TEXTO PERFEITAMENTE CENTRALIZADO E VISÍVEL */
+        @media (max-width: 768px) {
+            .urgency-banner {
+                top: 75px;
+                /* Ajustado para não ficar embaixo do menu */
+                padding: 14px 0 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                visibility: visible !important;
+                z-index: 990 !important;
+                min-height: 55px;
+            }
+
+            .urgency-content {
+                width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 8px;
+                justify-content: center;
+                align-items: center;
+                padding: 0 5px;
+            }
+
+            .urgency-text {
+                font-size: 0.95rem !important;
+                text-align: center;
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .urgency-text strong {
+                font-size: 1.05rem !important;
+                display: inline;
+                margin-left: 4px;
+            }
+
+            .urgency-icon {
+                font-size: 1.2rem !important;
+                display: inline-flex;
+            }
+
+            .urgency-badge {
+                font-size: 1rem !important;
+                padding: 14px 22px !important;
+                margin: 14px auto !important;
+                display: block;
+                text-align: center;
+            }
+
+            .hero {
+                padding-top: 180px !important;
+                /* Aumentado para compensar o banner mais baixo */
+            }
+
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .logo {
+                font-size: 1.1rem !important;
+            }
+
+            .navbar .btn {
+                padding: 6px 12px !important;
+                font-size: 0.8rem !important;
             }
         }
     </style>
@@ -50,9 +202,7 @@
                 <li><a href="#depoimentos">Depoimentos</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
-            <a href="#oferta" class="btn btn-sm"
-                >Quero
-                Dormir Melhor</a>
+            <a href="#oferta" class="btn btn-sm">Quero Dormir Melhor</a>
             <div class="mobile-menu-btn">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -60,6 +210,15 @@
             </div>
         </div>
     </nav>
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <div class="urgency-content">
+            <span class="urgency-icon">🔥</span>
+            <span class="urgency-text">APENAS <strong>50 VAGAS RESTANTES</strong></span>
+            <span class="urgency-icon">🔥</span>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero">
@@ -70,8 +229,18 @@
             <p>Método validado por militares, agora adaptado para você. Transforme sua rotina de sono com disciplina,
                 foco e resultados reais.</p>
 
-            <div class="hero-image-container">
-                <img src="hero_sleep_image.png" alt="Quarto relaxante representando sono profundo" class="hero-image">
+            <div class="hero-image-container" style="max-width: 400px; margin: 30px auto;">
+                <script src="https://fast.wistia.com/player.js" async></script>
+                <script src="https://fast.wistia.com/embed/xxf6v78yvo.js" async type="module"></script>
+                <style>
+                    wistia-player[media-id='xxf6v78yvo']:not(:defined) {
+                        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/xxf6v78yvo/swatch');
+                        display: block;
+                        filter: blur(5px);
+                        padding-top: 181.67%;
+                    }
+                </style>
+                <wistia-player media-id="xxf6v78yvo" aspect="0.5504587155963303"></wistia-player>
             </div>
 
             <div style="margin-top: 40px;">
@@ -128,6 +297,7 @@
             <div class="offer-box">
                 <div class="offer-header">
                     <span class="offer-tag">OFERTA ESPECIAL POR TEMPO LIMITADO</span>
+                    <div class="urgency-badge">⚠️ APENAS 50 VAGAS RESTANTES ⚠️</div>
                     <h2>Transforme Seu Sono em Apenas 7 Dias</h2>
                     <p>Adquira agora o desafio completo e receba bônus exclusivos</p>
                 </div>
@@ -138,15 +308,19 @@
                         <ul class="feature-list">
                             <li>
                                 <strong>Desafio de 7 dias (APP Interativo)</strong>
-                                <p>Instruções detalhadas para cada dia, com exercícios e técnicas específicas.</p>
+                                <p>Acesso completo a um app com aulas e treinamento avançado.</p>
                             </li>
                             <li>
-                                <strong>Áudio de Relaxamento com Técnica Militar Chinesa</strong>
-                                <p>Guia de áudio para induzir o sono profundo usando técnicas milenares.</p>
+                                <strong>Rotina para Eliminar Insônia</strong>
+                                <p>Guia passo-a-passo comprovado para vencer a insônia.</p>
+                            </li>
+                            <li>
+                                <strong>Técnica do Sistema Chinês</strong>
+                                <p>Aprenda a dormir em 2 minutos com esta técnica militar exclusiva.</p>
                             </li>
                             <li>
                                 <strong>E-book: "Alimentos que Ajudam no Sono"</strong>
-                                <p>Guia nutricional completo para otimizar sua alimentação para um sono melhor.</p>
+                                <p>Guia nutricional completo para otimizar sua alimentação.</p>
                             </li>
                             <li>
                                 <strong>Acesso Vitalício</strong>
@@ -163,7 +337,8 @@
                             <span class="new-price">€4</span>
                         </div>
                         <p class="payment-info">Pagamento único, sem mensalidades</p>
-                        <a href="#" class="btn btn-primary btn-block">Quero Dormir Melhor Agora</a>
+                        <a href="https://buy.stripe.com/14A14gb6D9Sbb1X14V6Zy02" class="btn btn-primary btn-block">Quero
+                            Dormir Melhor Agora</a>
                         <div class="guarantee">
                             <span class="shield-icon">🛡️</span>
                             <span>Garantia de 7 dias ou seu dinheiro de volta</span>
@@ -301,7 +476,8 @@
             </div>
             <div class="contact-cta">
                 <p>Ainda tem dúvidas? Entre em contato conosco</p>
-                <a href="#" class="btn btn-outline">Fale com nossa equipe</a>
+                <a href="mailto:sonodesoldado@gmail.com" class="btn btn-outline">Fale com nossa equipe</a>
+                <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Contato: sonodesoldado@gmail.com</p>
             </div>
         </div>
     </section>
@@ -336,15 +512,78 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Método Sono de Soldado. Todos os direitos reservados.</p>
-            <p class="disclaimer">Este site não tem relação com nenhuma instituição militar. Os resultados podem
-                variar
+            <p class="disclaimer">Este site não tem relação com nenhuma instituição militar. Os resultados podem variar
                 de pessoa para pessoa.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Social Proof Notifications
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Notiflix script loaded');
+
+            var position = "left-bottom";
+            var color = "verde";
+            var animation = "from-left";
+            var product_name = "";
+            var phrase = "adquiriu o Método Sono de Soldado!";
+            var timeout = 4000;
+            var type_name = "masc, fem";
+            var msg_final = "";
+            var min_time = 4;
+            var max_time = 20;
+
+            var names_masc = ['Jose', 'Joao', 'Antonio', 'Francisco', 'Carlos', 'Paulo', 'Pedro', 'Lucas', 'Luiz', 'Marcos', 'Luis', 'Gabriel', 'Rafael', 'Daniel', 'Marcelo', 'Bruno', 'Eduardo', 'Felipe', 'Rodrigo', 'Manoel', 'Mateus', 'Andre', 'Fernando', 'Fabio', 'Leonardo', 'Gustavo', 'Guilherme', 'Leandro', 'Tiago', 'Anderson', 'Ricardo', 'Marcio', 'Jorge', 'Alexandre', 'Roberto', 'Edson', 'Diego', 'Vitor', 'Sergio', 'Claudio', 'Matheus', 'Thiago', 'Geraldo', 'Adriano', 'Luciano', 'Julio', 'Renato', 'Alex', 'Vinicius', 'Rogerio', 'Samuel', 'Ronaldo', 'Mario', 'Flavio', 'Douglas', 'Igor', 'Davi', 'Manuel', 'Jeferson', 'Cicero', 'Victor', 'Miguel', 'Robson', 'Mauricio', 'Danilo', 'Henrique', 'Caio', 'Reginaldo', 'Joaquim', 'Benedito', 'Gilberto', 'Marco', 'Alan', 'Nelson', 'Cristiano', 'Elias', 'Wilson', 'Valdir', 'Emerson', 'Luan', 'David', 'Renan', 'Severino', 'Fabricio', 'Mauro', 'Jonas', 'Gilmar', 'Jean', 'Fabiano', 'Wesley', 'Diogo', 'Adilson', 'Jair', 'Alessandro', 'Everton', 'Osvaldo', 'Gilson', 'Willian', 'Joel', 'Silvio', 'Helio', 'Maicon', 'Reinaldo', 'Pablo', 'Artur', 'Vagner', 'Valter', 'Celso', 'Ivan', 'Cleiton', 'Vanderlei', 'Vicente', 'Arthur', 'Milton', 'Domingos', 'Wagner', 'Sandro', 'Moises', 'Edilson', 'Ademir', 'Adao', 'Evandro', 'Cesar', 'Valmir', 'Murilo', 'Juliano', 'Edvaldo', 'Ailton', 'Junior', 'Breno', 'Nicolas', 'Ruan', 'Alberto', 'Rubens', 'Nilton', 'Augusto', 'Cleber', 'Osmar', 'Nilson', 'Hugo', 'Otavio', 'Vinicios', 'Italo', 'Wilian', 'Alisson', 'Aparecido'];
+            var names_fem = ['Maria', 'Ana', 'Francisca', 'Antonia', 'Adriana', 'Juliana', 'Marcia', 'Fernanda', 'Patricia', 'Aline', 'Sandra', 'Camila', 'Amanda', 'Bruna', 'Jessica', 'Leticia', 'Julia', 'Luciana', 'Vanessa', 'Mariana', 'Gabriela', 'Vera', 'Vitoria', 'Larissa', 'Claudia', 'Beatriz', 'Rita', 'Luana', 'Sonia', 'Renata', 'Eliane'];
+
+            var option = {
+                position: position,
+                cssAnimationStyle: animation,
+                plainText: false,
+                timeout: timeout
+            };
+
+            function show_notification() {
+                console.log('Showing notification...');
+                if (type_name == "masc") {
+                    msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+                } else if (type_name == "fem") {
+                    msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+                } else {
+                    var array_aux = ["masc", "fem"];
+                    if (array_aux[Math.floor(Math.random() * array_aux.length)] == "masc") {
+                        msg_final = "<strong>" + names_masc[Math.floor(Math.random() * names_masc.length)] + "</strong>";
+                    } else {
+                        msg_final = "<strong>" + names_fem[Math.floor(Math.random() * names_fem.length)] + "</strong>";
+                    }
+                }
+
+                msg_final += " " + phrase + " " + product_name;
+
+                if (color == "verde") {
+                    Notiflix.Notify.Success(msg_final, option);
+                }
+                if (color == "azul") {
+                    Notiflix.Notify.Info(msg_final, option);
+                }
+                if (color == "vermelho") {
+                    Notiflix.Notify.Failure(msg_final, option);
+                }
+                if (color == "amarelo") {
+                    Notiflix.Notify.Warning(msg_final, option);
+                }
+
+                var rand = Math.floor(Math.random() * (max_time - min_time + 1) + min_time);
+                setTimeout(show_notification, rand * 1000);
+            }
+
+            console.log('Starting notification timer...');
+            setTimeout(show_notification, 4 * 1000);
+        });
+    </script>
 </body>
 
 </html>
-
-
