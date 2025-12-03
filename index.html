@@ -333,8 +333,8 @@
                             <span class="discount-badge">60% OFF</span>
                         </div>
                         <div class="price-values">
-                            <span class="old-price">€10</span>
-                            <span class="new-price">€4</span>
+                            <span class="old-price">€16</span>
+                            <span class="new-price">€8</span>
                         </div>
                         <p class="payment-info">Pagamento único, sem mensalidades</p>
                         <a href="https://buy.stripe.com/14A14gb6D9Sbb1X14V6Zy02" class="btn btn-primary btn-block">Quero
@@ -583,6 +583,15 @@
             console.log('Starting notification timer...');
             setTimeout(show_notification, 4 * 1000);
         });
+    </script>
+    <script>
+        // Back Redirect Logic
+        if (!window.location.pathname.includes("ofertaespecial")) {
+            history.pushState(null, null, location.href);
+            window.addEventListener("popstate", function () {
+                window.location.href = "ofertaespecial/index.html";
+            });
+        }
     </script>
 </body>
 

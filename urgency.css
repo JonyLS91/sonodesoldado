@@ -1,0 +1,155 @@
+/* Urgency Banner */
+.urgency-banner {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+    z-index: 999;
+    padding: 12px 0;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    animation: urgencyPulse 2s ease-in-out infinite;
+}
+
+.urgency-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.urgency-icon {
+    font-size: 1.3rem;
+    animation: fireFlicker 1.5s ease-in-out infinite;
+}
+
+.urgency-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.urgency-text strong {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Urgency Badge in Offer Section */
+.urgency-badge {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 15px 0;
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+    animation: urgencyShake 3s ease-in-out infinite;
+}
+
+@keyframes urgencyPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 25px rgba(231, 76, 60, 0.7);
+    }
+}
+
+@keyframes fireFlicker {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+@keyframes urgencyShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-2px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(2px);
+    }
+}
+
+/* Adjust hero section padding to account for urgency banner */
+.hero {
+    padding-top: 190px !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .urgency-banner {
+        top: 50px;
+        padding: 10px 0;
+    }
+
+    .urgency-text {
+        font-size: 0.9rem;
+    }
+
+    .urgency-text strong {
+        font-size: 1rem;
+    }
+
+    .urgency-icon {
+        font-size: 1.1rem;
+    }
+
+    .urgency-badge {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        letter-spacing: 1px;
+    }
+
+    .hero {
+        padding-top: 170px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .urgency-text {
+        font-size: 0.75rem;
+    }
+
+    .urgency-text strong {
+        font-size: 0.85rem;
+    }
+
+    .urgency-badge {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+}
